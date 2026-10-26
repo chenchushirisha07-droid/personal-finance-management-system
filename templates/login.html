@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Sign In - Fintrack{% endblock %}
+
+{% block content %}
+<div class="flex-grow flex items-center justify-center bg-gray-100 p-4">
+    <div class="flex flex-col md:flex-row w-full max-w-4xl bg-white shadow-2xl rounded-lg overflow-hidden min-h-[500px]">
+        
+        <!-- Left Side: Sign In Form -->
+        <div id="signInSection" class="w-full md:w-1/2 p-10 flex flex-col justify-center bg-white items-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Sign In</h2>
+            
+            {% if error %}
+            <div class="mb-4 w-full max-w-sm bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-sm text-center">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form action="/login" method="POST" class="w-full max-w-sm space-y-4 flex flex-col items-center">
+                <input type="email" name="email" placeholder="Email Address" required 
+                       class="w-full px-4 py-3 bg-gray-100 border-none rounded focus:ring-2 focus:ring-gray-400 outline-none">
+                
+                <input type="password" name="password" placeholder="Password" required 
+                       class="w-full px-4 py-3 bg-gray-100 border-none rounded focus:ring-2 focus:ring-gray-400 outline-none">
+                
+                <button type="submit" class="w-3/4 mt-6 bg-[#2d2d2d] text-white py-3 rounded-full font-bold tracking-wide hover:bg-black transition">
+                    SIGN IN
+                </button>
+            </form>
+        </div>
+
+        <!-- Left Side: Sign Up Form (Hidden by default) -->
+        <div id="signUpSection" class="w-full md:w-1/2 p-10 flex flex-col justify-center bg-white items-center hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Create Account</h2>
+            
+            <form action="/signup" method="POST" class="w-full max-w-sm space-y-4 flex flex-col items-center">
+                <input type="email" name="email" placeholder="Email Address" required 
+                       class="w-full px-4 py-3 bg-gray-100 border-none rounded focus:ring-2 focus:ring-gray-400 outline-none">
+                
+                <input type="password" name="password" placeholder="Password" required 
+                       class="w-full px-4 py-3 bg-gray-100 border-none rounded focus:ring-2 focus:ring-gray-400 outline-none">
+                
+                <button type="submit" class="w-3/4 mt-6 bg-[#2d2d2d] text-white py-3 rounded-full font-bold tracking-wide hover:bg-black transition">
+                    REGISTER
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Side: Welcome Panel -->
+        <div class="w-full md:w-1/2 p-10 flex flex-col justify-center items-center bg-[#2c1417] text-white text-center">
+            <h2 id="panelTitle" class="text-4xl font-bold mb-4">Hello...!</h2>
+            <p id="panelText" class="text-sm text-gray-300 mb-8 max-w-xs leading-relaxed">
+                Enter your personal details and start your journey with us
+            </p>
+            <button id="toggleBtn" onclick="toggleForms()" class="w-3/4 border-2 border-white text-white py-3 rounded-full font-bold tracking-wide hover:bg-white hover:text-[#2c1417] transition">
+                SIGN UP
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function toggleForms() {
+        const signIn = document.getElementById('signInSection');
+        const signUp = document.getElementById('signUpSection');
+        const btn = document.getElementById('toggleBtn');
+        const title = document.getElementById('panelTitle');
+        const text = document.getElementById('panelText');
+
+        if (signIn.classList.contains('hidden')) {
+            signIn.classList.remove('hidden');
+            signUp.classList.add('hidden');
+            btn.innerText = 'SIGN UP';
+            title.innerText = 'Hello...!';
+            text.innerText = 'Enter your personal details and start your journey with us';
+        } else {
+            signIn.classList.add('hidden');
+            signUp.classList.remove('hidden');
+            btn.innerText = 'SIGN IN';
+            title.innerText = 'Welcome Back!';
+            text.innerText = 'To keep connected with us please login with your personal info';
+        }
+    }
+</script>
+{% endblock %}

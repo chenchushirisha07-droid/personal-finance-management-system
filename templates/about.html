@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<section class="fade-in pt-16 pb-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-6">Our Mission & Vision</h1>
+        <p class="text-lg text-brand-gray mb-12 leading-relaxed">
+            At Finora, we believe that managing money shouldn't be a complex chore. Our mission is to make everyday money management simple, accessible, and transparent for middle-class families, salaried employees, and students across India. We envision a future where everyone has the tools to build healthier financial habits without the confusing financial jargon.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-left mb-16">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="ph ph-shield-check text-4xl text-brand-green mb-4"></i>
+                <h4 class="font-bold text-xl mb-2">Trust & Privacy</h4>
+                <p class="text-brand-gray text-sm">Your financial data is yours alone. We prioritize secure, transparent tracking without selling your private information.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="ph ph-sparkle text-4xl text-brand-green mb-4"></i>
+                <h4 class="font-bold text-xl mb-2">Simplicity</h4>
+                <p class="text-brand-gray text-sm">No confusing spreadsheets. Just a clean, intuitive interface designed specifically for everyday people.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <i class="ph ph-users text-4xl text-brand-green mb-4"></i>
+                <h4 class="font-bold text-xl mb-2">Family First</h4>
+                <p class="text-brand-gray text-sm">Dedicated tools to help households plan shared expenses like rent, groceries, electricity, and education.</p>
+            </div>
+        </div>
+        
+        <a href="/services" class="bg-brand-navy hover:bg-gray-800 text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg">
+            Explore Our Features
+        </a>
+    </div>
+</section>
+{% endblock %}

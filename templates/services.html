@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Features & Services{% endblock %}
+
+{% block content %}
+<section class="fade-in pt-16 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl font-bold mb-4">Everything You Need to Succeed</h1>
+        <p class="text-brand-gray max-w-2xl mx-auto mb-16">Powerful features wrapped in a premium, simple interface to help you track, save, and grow your wealth.</p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                <i class="ph ph-chart-line-up text-3xl text-brand-green mb-4"></i>
+                <h3 class="font-bold mb-2">Income Tracking</h3>
+                <p class="text-brand-gray text-sm">Record your monthly salary seamlessly.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                <i class="ph ph-receipt text-3xl text-brand-green mb-4"></i>
+                <h3 class="font-bold mb-2">Daily Expenses</h3>
+                <p class="text-brand-gray text-sm">Log and categorize everyday spending.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                <i class="ph ph-calendar-check text-3xl text-brand-green mb-4"></i>
+                <h3 class="font-bold mb-2">Monthly Budgets</h3>
+                <p class="text-brand-gray text-sm">Set strict spending limits to avoid debt.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
+                <i class="ph ph-target text-3xl text-brand-green mb-4"></i>
+                <h3 class="font-bold mb-2">Savings Goals</h3>
+                <p class="text-brand-gray text-sm">Set targets for travel and emergencies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
